@@ -3,9 +3,9 @@
     "node_modules"
   ],
   "watch": [
-    "caesar-cipher-cli",
+    "src",
     "package-lock.json"
   ],
-  "exec": "babel-node --extensions \".ts\" caesar-cipher-cli/index.ts --shift 7 --action encode -i examples/input.txt",
+  "exec": "babel-node --extensions \".ts\" src/index.ts --shift 7 --action encode -i examples/input.txt",
   "ext": "ts"
 }

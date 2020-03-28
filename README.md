@@ -1,60 +1,40 @@
-# RS School REST service
+# caesar-cipher-cli utility
 
-## Prerequisites
+## Build application
 
-- Git - [Download & Install Git](https://git-scm.com/downloads).
-- Node.js - [Download & Install Node.js](https://nodejs.org/en/download/) and the npm package manager.
-
-## Downloading
-
+Run to make development build, you may specify options in `nodemon.json` file
 ```
-git clone {repository URL}
+npm run start
 ```
 
-## Installing NPM modules
-
+Run to make production build
 ```
-npm install
+npm run build
 ```
 
 ## Running application
 
+Run to see available options
 ```
-npm start
-```
-
-After starting the app on port (4000 as default) you can open
-in your browser OpenAPI documentation by typing http://localhost:4000/doc/.
-For more information about OpenAPI/Swagger please visit https://swagger.io/.
-
-## Testing
-
-After application running open new terminal and enter:
-
-To test without authorization
-
-```
-npm test
+node dist/index.js --help
 ```
 
-To test with authorization
+**Usage example:**
 
-```
-npm run test:auth
-```
-
-## Development
-
-If you're using VSCode, you can get a better developer experience from integration with [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) and [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) extensions.
-
-### Auto-fix and format
-
-```
-npm run lint
+```bash
+$ node dist/index.js -a encode -s 7 -i "./examples/input.txt" -o "./examples/output.txt"
 ```
 
-### Debugging in VSCode
+```bash
+$ node dist/index.js --action encode --shift 7 --input ./examples/plain.txt --output ./examples/encoded.txt
+```
 
-Press <kbd>F5</kbd> to debug.
+```bash
+$ node dist/index.js --action decode --shift 7 --input ./examples/decoded.txt --output ./examples/plain.txt
+```
 
-For more information, visit: https://code.visualstudio.com/docs/editor/debugging
+> input.txt
+> `This is secret. Message about "_" symbol!`
+
+> output.txt
+> `Aopz pz zljyla. Tlzzhnl hivba "_" zftivs!`

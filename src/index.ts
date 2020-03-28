@@ -16,7 +16,7 @@ const outputStream = !!options.output
   ? fs.createWriteStream(options.output)
   : process.stdout;
 
-const pipe = pipeline(
+pipeline(
   inputStream,
   transformStream,
   outputStream,
@@ -28,15 +28,3 @@ const pipe = pipeline(
     }
   }
 );
-
-pipe.on('end', (error, result) => {
-  console.log(`>> finished`, error, result);
-});
-
-// const example = options.action === 'encode'
-//   ? 'This is secret. Message about "_" symbol!'
-//   : 'Aopz pz zljyla. Tlzzhnl hivba "_" zftivs!';
-
-// const result = action(example);
-
-// console.log(`>> result:`, result, result === 'Aopz pz zljyla. Tlzzhnl hivba "_" zftivs!');

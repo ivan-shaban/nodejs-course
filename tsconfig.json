@@ -4,7 +4,7 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "allowJs": false,
-    "target": "ES5",
+    "target": "ESNext",
     "noImplicitAny": true,
     "resolveJsonModule": true,
     "moduleResolution": "node",
@@ -21,7 +21,6 @@
     }
   },
   "include": [
-    "src/**/*",
-    "caesar-cipher-cli/**/*"
+    "src/**/*"
   ]
 }

@@ -19,7 +19,6 @@ function parseAction(value: string) {
   return value;
 }
 
-// TODO: посмотреть возможность асинхронной валидации
 function parseInput(value: string) {
   if (value && !fs.existsSync(value)) {
     console.error(`'input' argument value must be a valid path to file, received: ${value}`);
@@ -28,7 +27,6 @@ function parseInput(value: string) {
   return value;
 }
 
-// TODO: посмотреть возможность асинхронной валидации
 function parseOutput(value: string) {
   if (value && !fs.existsSync(value)) {
     console.error(`'output' argument value must be a valid path to file, received: ${value}`);
@@ -39,10 +37,10 @@ function parseOutput(value: string) {
 
 const cli = new Command()
   .version(pkg.version)
-  .requiredOption('-s, --shift <value>', 'a shift', parseShift)
-  .requiredOption('-a, --action <type>', 'an action, possible valies: encode/decode', parseAction)
-  .option('-i, --input <path>', 'an input file', parseInput)
-  .option('-o, --output <path>', 'an output file', parseOutput)
+  .requiredOption('-s, --shift <value>', 'a shift, number, required', parseShift)
+  .requiredOption('-a, --action <type>', 'an action, possible values: encode/decode, required', parseAction)
+  .option('-i, --input <path>', 'path to input file, options', parseInput)
+  .option('-o, --output <path>', 'path to output file, optional', parseOutput)
   .parse(process.argv);
 
 export const options = cli.opts();
