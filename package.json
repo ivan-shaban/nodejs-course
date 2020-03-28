@@ -9,7 +9,9 @@
   "description": "REST service starter for RS School",
   "main": "src/server.ts",
   "scripts": {
-    "start": "nodemon --exec babel-node src/server.ts --extensions .ts",
+    "start": "nodemon --inspect=3001 --exec babel-node src/server.ts --ext .ts",
+    "caesar-cipher-cli": "nodemon",
+    "build": "npx babel caesar-cipher-cli --out-file dist/index.js",
     "lint": "eslint ./ --ignore-path .gitignore --fix",
     "test": "cross-env DEBUG=rs:* jest --testMatch \"<rootDir>/test/e2e/test/*.test.js\" --noStackTrace",
     "test:auth": "cross-env DEBUG=rs:* TEST_MODE=auth jest --noStackTrace"
@@ -45,6 +47,7 @@
     ]
   },
   "dependencies": {
+    "commander": "^5.0.0",
     "cross-env": "6.0.3",
     "dotenv": "8.2.0",
     "express": "4.17.1",
@@ -63,6 +66,7 @@
     "@types/swagger-ui-express": "^4.1.2",
     "@types/uuid": "^7.0.2",
     "@types/yamljs": "^0.2.30",
+    "babel-cli": "^6.26.0",
     "chai": "4.2.0",
     "debug": "4.1.1",
     "dirty-chai": "2.0.1",

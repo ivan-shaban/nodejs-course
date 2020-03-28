@@ -1,0 +1,11 @@
+{
+  "ignore": [
+    "node_modules"
+  ],
+  "watch": [
+    "caesar-cipher-cli",
+    "package-lock.json"
+  ],
+  "exec": "babel-node --extensions \".ts\" caesar-cipher-cli/index.ts --shift 7 --action encode -i examples/input.txt",
+  "ext": "ts"
+}
