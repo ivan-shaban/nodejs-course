@@ -7,11 +7,17 @@ import { Transform } from 'stream';
 
 const transformSymbol = (symbol: string) => {
   if (abc.includes(symbol)) {
-    const index = (abc.indexOf(symbol) + options.shift) % abc.length;
+    let index = (abc.indexOf(symbol) + options.shift) % abc.length;
+    index = index < 0
+      ? abc.length + index
+      : index;
 
     return abc[index];
   } else if (ABC.includes(symbol)) {
-    const index = (ABC.indexOf(symbol) + options.shift) % ABC.length;
+    let index = (ABC.indexOf(symbol) + options.shift) % ABC.length;
+    index = index < 0
+      ? ABC.length + index
+      : index;
 
     return ABC[index];
   } else {

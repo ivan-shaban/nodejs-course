@@ -7,14 +7,14 @@ import { Transform } from 'stream';
 
 const transformSymbol = (symbol: string) => {
   if (abc.includes(symbol)) {
-    let index = abc.indexOf(symbol) - options.shift;
+    let index = (abc.indexOf(symbol) - options.shift) % abc.length;
     index = index < 0
       ? abc.length + index
       : index;
 
     return abc[index];
   } else if (ABC.includes(symbol)) {
-    let index = ABC.indexOf(symbol) - options.shift;
+    let index = (ABC.indexOf(symbol) - options.shift) % ABC.length;
     index = index < 0
       ? ABC.length + index
       : index;

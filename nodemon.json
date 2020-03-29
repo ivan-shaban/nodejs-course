@@ -6,6 +6,6 @@
     "src",
     "package-lock.json"
   ],
-  "exec": "babel-node --extensions \".ts\" src/index.ts --shift 7 --action encode -i examples/input.txt",
+  "exec": "babel-node --extensions \".ts\" src/index.ts --shift 7 --action encode -i examples/input.txt --output examples/output.txt",
   "ext": "ts"
 }

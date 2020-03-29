@@ -4,8 +4,8 @@ import fs from 'fs';
 
 function parseShift(value: string) {
   const result = parseInt(value, 10);
-  if (result < 0) {
-    console.error(`'shift' argument value must be greater then 0, received: ${value}`);
+  if (isNaN(result)) {
+    console.error(`'shift' argument value must an integer, received: ${value}`);
     process.exit(1);
   }
   return result;
